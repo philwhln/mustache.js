@@ -135,13 +135,13 @@ var Mustache = function() {
           "(\\^|\\#)\\s*(.+)\\s*" + //  #foo (# == $2, foo == $3)
           ctag +                    // }}
 
-          "\n*([\\s\\S]*?)" +       // between the tag ($2). leading newlines are dropped
+          "(\n*[\\s\\S]*?)" +       // between the tag ($2)
 
           otag +                    // {{
           "\\/\\s*\\3\\s*" +        //  /foo (backreference to the opening tag).
           ctag +                    // }}
 
-          "\\s*([\\s\\S]*)$",       // everything else in the string ($4). leading whitespace is dropped.
+          "(\\s*[\\s\\S]*)$",       // everything else in the string ($4)
 
         "g");
       });
